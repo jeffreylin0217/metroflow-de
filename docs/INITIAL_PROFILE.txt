@@ -1,0 +1,12 @@
+[('VendorID', 'INTEGER', 'YES', None, None, None), ('tpep_pickup_datetime', 'TIMESTAMP', 'YES', None, None, None), ('tpep_dropoff_datetime', 'TIMESTAMP', 'YES', None, None, None), ('passenger_count', 'BIGINT', 'YES', None, None, None), ('trip_distance', 'DOUBLE', 'YES', None, None, None), ('RatecodeID', 'BIGINT', 'YES', None, None, None), ('store_and_fwd_flag', 'VARCHAR', 'YES', None, None, None), ('PULocationID', 'INTEGER', 'YES', None, None, None), ('DOLocationID', 'INTEGER', 'YES', None, None, None), ('payment_type', 'BIGINT', 'YES', None, None, None), ('fare_amount', 'DOUBLE', 'YES', None, None, None), ('extra', 'DOUBLE', 'YES', None, None, None), ('mta_tax', 'DOUBLE', 'YES', None, None, None), ('tip_amount', 'DOUBLE', 'YES', None, None, None), ('tolls_amount', 'DOUBLE', 'YES', None, None, None), ('improvement_surcharge', 'DOUBLE', 'YES', None, None, None), ('total_amount', 'DOUBLE', 'YES', None, None, None), ('congestion_surcharge', 'DOUBLE', 'YES', None, None, None), ('Airport_fee', 'DOUBLE', 'YES', None, None, None), ('cbd_congestion_fee', 'DOUBLE', 'YES', None, None, None)]
+{
+  "source_rows": 3475226,
+  "null_timestamps": 0,
+  "backwards": 124,
+  "outside_month": 22,
+  "negative_distance": 0,
+  "negative_fare": 144118,
+  "null_passengers": 540149,
+  "zero_distance": 90893,
+  "max_duration": 5627
+}
