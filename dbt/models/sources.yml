@@ -1,0 +1,11 @@
+version: 2
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: trips
+        description: One typed row per source file row; partitioned by source month.
+      - name: zones
+        description: One row per official taxi zone lookup key.
+      - name: weather
+        description: One observed Central Park station day; metric units, quality flags respected.

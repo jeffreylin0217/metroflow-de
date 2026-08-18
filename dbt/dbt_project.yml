@@ -1,0 +1,12 @@
+name: metroflow
+version: '1.0.0'
+config-version: 2
+profile: metroflow
+model-paths: [models]
+test-paths: [tests]
+models:
+  metroflow:
+    staging:
+      +materialized: view
+    gold:
+      +materialized: table
