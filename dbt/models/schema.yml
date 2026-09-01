@@ -1,0 +1,139 @@
+version: 2
+models:
+- name: stg_taxi_trips
+  description: One source file row; key trip_id = source SHA-256 plus zero-based physical
+    row. Upstream bronze.trips and stg_zones. Local wall-clock timestamps; invalid
+    rows retained with overlapping reason flags.
+  columns:
+  - name: trip_id
+    data_tests:
+    - unique
+    - not_null
+  - name: source_period
+    data_tests:
+    - not_null
+  - name: quality_status
+    data_tests:
+    - not_null
+    - accepted_values:
+        arguments:
+          values:
+          - INVALID
+          - SUSPICIOUS
+          - ACCEPTED
+- name: stg_zones
+  description: One TLC location key; upstream bronze.zones. Uniqueness validated before
+    any join.
+  columns:
+  - name: zone_key
+    data_tests:
+    - unique
+    - not_null
+- name: stg_weather
+  description: One Central Park date; upstream bronze.weather. Full source-month date
+    coverage required, missing or quality-rejected measurements remain NULL.
+  columns:
+  - name: date
+    data_tests:
+    - unique
+    - not_null
+- name: dim_zone
+  description: One official TLC location key; upstream stg_zones; includes official
+    Unknown/N/A zones.
+  columns:
+  - name: zone_key
+    data_tests:
+    - unique
+    - not_null
+  - name: borough
+    data_tests:
+    - not_null
+- name: dim_date
+  description: One calendar date spanning loaded weather months; upstream stg_weather.
+    Sunday=0; gaps between noncontiguous loaded months remain in the calendar.
+  columns:
+  - name: date_key
+    data_tests:
+    - unique
+    - not_null
+- name: fct_trips
+  description: One non-INVALID source record, including suspicious records; upstream
+    stg_taxi_trips. trip_id is source identity, not a real-world trip ID. Duplicate-looking
+    rides are preserved. Source period is replaced transactionally.
+  columns:
+  - name: trip_id
+    data_tests:
+    - unique
+    - not_null
+  - name: source_period
+    data_tests:
+    - not_null
+  - name: pickup_zone_key
+    data_tests:
+    - relationships:
+        arguments:
+          to: ref('dim_zone')
+          field: zone_key
+    - not_null
+  - name: dropoff_zone_key
+    data_tests:
+    - relationships:
+        arguments:
+          to: ref('dim_zone')
+          field: zone_key
+    - not_null
+  - name: pickup_date
+    data_tests:
+    - relationships:
+        arguments:
+          to: ref('dim_date')
+          field: date_key
+    - not_null
+  - name: quality_status
+    data_tests:
+    - accepted_values:
+        arguments:
+          values:
+          - ACCEPTED
+          - SUSPICIOUS
+- name: mart_zone_daily
+  description: "One date \xD7 pickup zone with retained trips; upstream fct_trips.\
+    \ Composite key (date, zone_key). AVG ignores nulls; passenger totals are observed\
+    \ values, not imputed."
+  columns:
+  - name: date
+    data_tests:
+    - not_null
+  - name: zone_key
+    data_tests:
+    - not_null
+- name: mart_borough_daily
+  description: "One date \xD7 pickup borough; upstream mart_zone_daily and unique\
+    \ dim_zone. Composite key (date, borough). Sum trip counts after many-to-one join."
+  columns:
+  - name: date
+    data_tests:
+    - not_null
+  - name: borough
+    data_tests:
+    - not_null
+- name: mart_weather_demand
+  description: One loaded station date, including zero-demand days; upstream dim_date,
+    mart_zone_daily, stg_weather. No trip-to-weather join. Trailing window is up to
+    seven available observation rows.
+  columns:
+  - name: date
+    data_tests:
+    - unique
+    - not_null
+- name: mart_quality
+  description: "One source month \xD7 quality status present; upstream stg_taxi_trips.\
+    \ Composite key (source_period, quality_status). Reason counts overlap and must\
+    \ not be added together."
+  columns:
+  - name: source_period
+    data_tests:
+    - not_null
+  - name: quality_status
+    data_tests:
+    - not_null
