@@ -1,0 +1,17 @@
+name: Fixture pipeline CI
+on: [push, pull_request]
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: pip install -r requirements.lock
+      - run: python -m compileall -q metroflow tests scripts
+      - run: python -c "import metroflow.pipeline, metroflow.ingest, metroflow.bronze"
+      - run: python -m pytest -q
+      - run: git diff --check
