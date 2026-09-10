@@ -1,0 +1,3 @@
+# Optional documentation tooling; the pipeline does not require Matplotlib.
+-r requirements.lock
+matplotlib==3.10.6

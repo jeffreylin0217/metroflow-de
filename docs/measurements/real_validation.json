@@ -1,0 +1,376 @@
+{
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "python": "3.12.14",
+  "duckdb": "1.5.5",
+  "first_six_month_run": {
+    "run_id": "fcc8ea3395034c90a702a215c16f1144",
+    "start_time": "2026-09-13T03:59:43.955922+00:00",
+    "run_mode": "incremental",
+    "periods_requested": [
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04",
+      "2025-05",
+      "2025-06"
+    ],
+    "files_downloaded": 10,
+    "files_skipped": 3,
+    "status": "success",
+    "partitions_processed": [
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04",
+      "2025-05",
+      "2025-06"
+    ],
+    "input_rows": 24083384,
+    "bronze_rows": 24083384,
+    "dbt_tests": {
+      "pass": 37,
+      "warn": 1,
+      "fail": 0,
+      "error": 0
+    },
+    "gold_rows": {
+      "dim_date": 181,
+      "dim_zone": 265,
+      "mart_zone_daily": 43732,
+      "mart_borough_daily": 1448,
+      "mart_weather_demand": 181,
+      "mart_quality": 18,
+      "fct_trips": 24082454
+    },
+    "quality_warnings": 6183939,
+    "invalid_rows": 930,
+    "end_time": "2026-09-13T04:02:39.353225+00:00",
+    "duration_seconds": 175.397
+  },
+  "unchanged_rerun": {
+    "run_id": "68653100105b4d32a86320411afe58d7",
+    "start_time": "2026-09-13T04:04:05.099204+00:00",
+    "run_mode": "incremental",
+    "periods_requested": [
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04",
+      "2025-05",
+      "2025-06"
+    ],
+    "files_downloaded": 0,
+    "files_skipped": 13,
+    "status": "success",
+    "partitions_processed": [],
+    "input_rows": 24083384,
+    "bronze_rows": 24083384,
+    "gold_rows": {
+      "dim_date": 181,
+      "dim_zone": 265,
+      "mart_zone_daily": 43732,
+      "mart_borough_daily": 1448,
+      "mart_weather_demand": 181,
+      "mart_quality": 18,
+      "fct_trips": 24082454
+    },
+    "quality_warnings": 6183939,
+    "invalid_rows": 930,
+    "dbt_tests": {
+      "pass": 37,
+      "warn": 1,
+      "fail": 0,
+      "error": 0
+    },
+    "dbt_skipped": true,
+    "end_time": "2026-09-13T04:04:05.431056+00:00",
+    "duration_seconds": 0.332
+  },
+  "forced_march_backfill": {
+    "run_id": "914c7d6ec3b3492e9ccb612a8099bc1d",
+    "start_time": "2026-09-13T04:04:05.754967+00:00",
+    "run_mode": "incremental",
+    "periods_requested": [
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04",
+      "2025-05",
+      "2025-06"
+    ],
+    "files_downloaded": 0,
+    "files_skipped": 13,
+    "status": "success",
+    "partitions_processed": [
+      "2025-03"
+    ],
+    "input_rows": 24083384,
+    "bronze_rows": 24083384,
+    "dbt_tests": {
+      "pass": 37,
+      "warn": 1,
+      "fail": 0,
+      "error": 0
+    },
+    "gold_rows": {
+      "dim_date": 181,
+      "dim_zone": 265,
+      "mart_zone_daily": 43732,
+      "mart_borough_daily": 1448,
+      "mart_weather_demand": 181,
+      "mart_quality": 18,
+      "fct_trips": 24082454
+    },
+    "quality_warnings": 6183939,
+    "invalid_rows": 930,
+    "end_time": "2026-09-13T04:04:24.419064+00:00",
+    "duration_seconds": 18.664
+  },
+  "full_refresh": {
+    "run_id": "f2001979610b43b2a799fd891d47ac48",
+    "start_time": "2026-09-13T04:04:24.879763+00:00",
+    "run_mode": "full_refresh",
+    "periods_requested": [
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04",
+      "2025-05",
+      "2025-06"
+    ],
+    "files_downloaded": 0,
+    "files_skipped": 13,
+    "status": "success",
+    "partitions_processed": [
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04",
+      "2025-05",
+      "2025-06"
+    ],
+    "input_rows": 24083384,
+    "bronze_rows": 24083384,
+    "dbt_tests": {
+      "pass": 37,
+      "warn": 1,
+      "fail": 0,
+      "error": 0
+    },
+    "gold_rows": {
+      "dim_date": 181,
+      "dim_zone": 265,
+      "mart_zone_daily": 43732,
+      "mart_borough_daily": 1448,
+      "mart_weather_demand": 181,
+      "mart_quality": 18,
+      "fct_trips": 24082454
+    },
+    "quality_warnings": 6183939,
+    "invalid_rows": 930,
+    "end_time": "2026-09-13T04:04:49.432993+00:00",
+    "duration_seconds": 24.553
+  },
+  "equivalence": "passed",
+  "verification_method": "Exact fixture row equality; real per-partition count/hash-sum plus every sorted mart cell compared exactly except FLOAT values (relative tolerance 1e-12, absolute 1e-9). Hash-sums are bounded-memory evidence, not mathematical proof of equality.",
+  "fact_content_fingerprints": [
+    [
+      "2025-01",
+      3475080,
+      "32057399904993012375198098"
+    ],
+    [
+      "2025-02",
+      3577419,
+      "32983988790905867109694478"
+    ],
+    [
+      "2025-03",
+      4145143,
+      "38227553832592968363366288"
+    ],
+    [
+      "2025-04",
+      3970383,
+      "36613991393469063743161695"
+    ],
+    [
+      "2025-05",
+      4591720,
+      "42362248438517237545329257"
+    ],
+    [
+      "2025-06",
+      4322709,
+      "39857219174754599547196250"
+    ]
+  ],
+  "max_mart_float_delta": {
+    "backfill": 1.8189894035458565e-12,
+    "full_refresh": 1.8189894035458565e-12
+  },
+  "sources": [
+    {
+      "source_name": "reference",
+      "logical_period": "zones",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv",
+      "local_path": "raw/reference/zones/1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed.csv",
+      "file_size": 12331,
+      "sha256": "1a99e105092230f8620f301edcca7f80d3080642ff404d28ed957d3fa222c8ed",
+      "downloaded_at": "2026-09-13T03:52:27.655288+00:00",
+      "source_row_count": 265,
+      "schema_fingerprint": null,
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "tlc",
+      "logical_period": "2025-01",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-01.parquet",
+      "local_path": "raw/tlc/year=2025/month=01/9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a.parquet",
+      "file_size": 59158238,
+      "sha256": "9af277e4c0d3f9deb30644da822981e1e7df6af58313170fd3aa8a474485488a",
+      "downloaded_at": "2026-09-13T03:47:52.808021+00:00",
+      "source_row_count": 3475226,
+      "schema_fingerprint": "351194d0dc1e93c2eafe9e28340ee8a16f6bba7e859da93ce9a5c04ab79171ca",
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "tlc",
+      "logical_period": "2025-02",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-02.parquet",
+      "local_path": "raw/tlc/year=2025/month=02/037cba555a73663f3a51a2c27816e40e3feb364769942bdf122b9da31e377bd3.parquet",
+      "file_size": 60343086,
+      "sha256": "037cba555a73663f3a51a2c27816e40e3feb364769942bdf122b9da31e377bd3",
+      "downloaded_at": "2026-09-13T04:00:20.259129+00:00",
+      "source_row_count": 3577543,
+      "schema_fingerprint": "351194d0dc1e93c2eafe9e28340ee8a16f6bba7e859da93ce9a5c04ab79171ca",
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "tlc",
+      "logical_period": "2025-03",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-03.parquet",
+      "local_path": "raw/tlc/year=2025/month=03/20c4b77cce457b7cfdae77c5069ca7dc91c167f876a41467f4502ab69487a186.parquet",
+      "file_size": 69964745,
+      "sha256": "20c4b77cce457b7cfdae77c5069ca7dc91c167f876a41467f4502ab69487a186",
+      "downloaded_at": "2026-09-13T04:00:57.251227+00:00",
+      "source_row_count": 4145257,
+      "schema_fingerprint": "351194d0dc1e93c2eafe9e28340ee8a16f6bba7e859da93ce9a5c04ab79171ca",
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "tlc",
+      "logical_period": "2025-04",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-04.parquet",
+      "local_path": "raw/tlc/year=2025/month=04/6f98938de9380a3f85600533816f0dc0e6d9b5b210e485d623952bac599bbe28.parquet",
+      "file_size": 67352824,
+      "sha256": "6f98938de9380a3f85600533816f0dc0e6d9b5b210e485d623952bac599bbe28",
+      "downloaded_at": "2026-09-13T04:01:23.749378+00:00",
+      "source_row_count": 3970553,
+      "schema_fingerprint": "351194d0dc1e93c2eafe9e28340ee8a16f6bba7e859da93ce9a5c04ab79171ca",
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "tlc",
+      "logical_period": "2025-05",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-05.parquet",
+      "local_path": "raw/tlc/year=2025/month=05/7ef46bcd0fceee7f8c0bb38a532be05bceefabb512d4bb0b32a7727dd862b15c.parquet",
+      "file_size": 77837865,
+      "sha256": "7ef46bcd0fceee7f8c0bb38a532be05bceefabb512d4bb0b32a7727dd862b15c",
+      "downloaded_at": "2026-09-13T04:01:55.057423+00:00",
+      "source_row_count": 4591845,
+      "schema_fingerprint": "351194d0dc1e93c2eafe9e28340ee8a16f6bba7e859da93ce9a5c04ab79171ca",
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "tlc",
+      "logical_period": "2025-06",
+      "source_url": "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2025-06.parquet",
+      "local_path": "raw/tlc/year=2025/month=06/1bea7f5b09c744414451fa7fef09fbc5a393ffb1621c859be6ba0df23a14e1b6.parquet",
+      "file_size": 73542954,
+      "sha256": "1bea7f5b09c744414451fa7fef09fbc5a393ffb1621c859be6ba0df23a14e1b6",
+      "downloaded_at": "2026-09-13T04:02:22.817560+00:00",
+      "source_row_count": 4322960,
+      "schema_fingerprint": "351194d0dc1e93c2eafe9e28340ee8a16f6bba7e859da93ce9a5c04ab79171ca",
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "weather",
+      "logical_period": "2025-01",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00094728&startDate=2025-01-01&endDate=2025-01-31&dataTypes=PRCP%2CSNOW%2CTMIN%2CTMAX&units=metric&format=csv&includeAttributes=true&includeStationName=true",
+      "local_path": "raw/weather/2025-01/bbef2bca40fa245a9ac3f2e900c69f0b9f952d4e2e980a85b43106de6165616d.csv",
+      "file_size": 3733,
+      "sha256": "bbef2bca40fa245a9ac3f2e900c69f0b9f952d4e2e980a85b43106de6165616d",
+      "downloaded_at": "2026-09-13T03:52:29.843023+00:00",
+      "source_row_count": 31,
+      "schema_fingerprint": null,
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "weather",
+      "logical_period": "2025-02",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00094728&startDate=2025-02-01&endDate=2025-02-28&dataTypes=PRCP%2CSNOW%2CTMIN%2CTMAX&units=metric&format=csv&includeAttributes=true&includeStationName=true",
+      "local_path": "raw/weather/2025-02/b204727646e62bc5e17154bffc9a4a8bd2b32e70831bbcdceb02c7bb7acba4d9.csv",
+      "file_size": 3384,
+      "sha256": "b204727646e62bc5e17154bffc9a4a8bd2b32e70831bbcdceb02c7bb7acba4d9",
+      "downloaded_at": "2026-09-13T04:00:22.084220+00:00",
+      "source_row_count": 28,
+      "schema_fingerprint": null,
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "weather",
+      "logical_period": "2025-03",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00094728&startDate=2025-03-01&endDate=2025-03-31&dataTypes=PRCP%2CSNOW%2CTMIN%2CTMAX&units=metric&format=csv&includeAttributes=true&includeStationName=true",
+      "local_path": "raw/weather/2025-03/0f8ad6de2b3961a5376859fe48be7849de77418802a7fe4ec0f3cd50b11e0eb3.csv",
+      "file_size": 3726,
+      "sha256": "0f8ad6de2b3961a5376859fe48be7849de77418802a7fe4ec0f3cd50b11e0eb3",
+      "downloaded_at": "2026-09-13T04:00:59.147346+00:00",
+      "source_row_count": 31,
+      "schema_fingerprint": null,
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "weather",
+      "logical_period": "2025-04",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00094728&startDate=2025-04-01&endDate=2025-04-30&dataTypes=PRCP%2CSNOW%2CTMIN%2CTMAX&units=metric&format=csv&includeAttributes=true&includeStationName=true",
+      "local_path": "raw/weather/2025-04/5e7bdcda7d085b3fc23b5745faf9fa343d133e70d1269fcd0fa90ff91345fd3d.csv",
+      "file_size": 3619,
+      "sha256": "5e7bdcda7d085b3fc23b5745faf9fa343d133e70d1269fcd0fa90ff91345fd3d",
+      "downloaded_at": "2026-09-13T04:01:25.598039+00:00",
+      "source_row_count": 30,
+      "schema_fingerprint": null,
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "weather",
+      "logical_period": "2025-05",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00094728&startDate=2025-05-01&endDate=2025-05-31&dataTypes=PRCP%2CSNOW%2CTMIN%2CTMAX&units=metric&format=csv&includeAttributes=true&includeStationName=true",
+      "local_path": "raw/weather/2025-05/2d67286e881dceb037487c785212e33bea006c5d5ea759a7c3cac1797ff1d203.csv",
+      "file_size": 3758,
+      "sha256": "2d67286e881dceb037487c785212e33bea006c5d5ea759a7c3cac1797ff1d203",
+      "downloaded_at": "2026-09-13T04:01:57.014520+00:00",
+      "source_row_count": 31,
+      "schema_fingerprint": null,
+      "ingestion_status": "validated"
+    },
+    {
+      "source_name": "weather",
+      "logical_period": "2025-06",
+      "source_url": "https://www.ncei.noaa.gov/access/services/data/v1?dataset=daily-summaries&stations=USW00094728&startDate=2025-06-01&endDate=2025-06-30&dataTypes=PRCP%2CSNOW%2CTMIN%2CTMAX&units=metric&format=csv&includeAttributes=true&includeStationName=true",
+      "local_path": "raw/weather/2025-06/3949749f01ea6cf0e54b563a3c4bf47a5024ba48cfcafcb4d5bfe224ccc1a7e2.csv",
+      "file_size": 3640,
+      "sha256": "3949749f01ea6cf0e54b563a3c4bf47a5024ba48cfcafcb4d5bfe224ccc1a7e2",
+      "downloaded_at": "2026-09-13T04:02:24.709915+00:00",
+      "source_row_count": 30,
+      "schema_fingerprint": null,
+      "ingestion_status": "validated"
+    }
+  ],
+  "storage_bytes": {
+    "raw": 408233903,
+    "bronze": 489969889,
+    "warehouse": 1103376384,
+    "current_reporting": 4693160
+  }
+}

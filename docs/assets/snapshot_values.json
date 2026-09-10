@@ -1,0 +1,107 @@
+{
+  "reporting_generation": "f2001979610b43b2a799fd891d47ac48",
+  "measurement_file": "docs/measurements/real_validation.json",
+  "measurement_sha256": "9c2729a2894157bb38b7521934abf3cf097dc8186db65d9056e2662548146a05",
+  "export_sha256": {
+    "mart_weather_demand.parquet": "3f37323e52c136c72a3413ecfc970141d8860165dd591e638d9118a3dd1f2ae6",
+    "mart_borough_daily.parquet": "ce391e2df7a976ec6d81aaeef667b4a65d9751a838b1d0e8ba6ac082fbee0308",
+    "mart_quality.parquet": "1a3ebc255a2f29dccc4a1a65735a8057354cc42e560f6e1cc6106e03068593eb"
+  },
+  "date_start": "2025-01-01",
+  "date_end": "2025-06-30",
+  "source_rows": 24083384,
+  "retained_rows": 24082454,
+  "quality_counts": {
+    "INVALID": 930,
+    "SUSPICIOUS": 6183939,
+    "ACCEPTED": 17898515
+  },
+  "monthly_retained_trips": [
+    {
+      "period": "2025-01",
+      "trips": 3475080
+    },
+    {
+      "period": "2025-02",
+      "trips": 3577419
+    },
+    {
+      "period": "2025-03",
+      "trips": 4145143
+    },
+    {
+      "period": "2025-04",
+      "trips": 3970383
+    },
+    {
+      "period": "2025-05",
+      "trips": 4591720
+    },
+    {
+      "period": "2025-06",
+      "trips": 4322709
+    }
+  ],
+  "pickup_location_totals": [
+    {
+      "location": "Manhattan",
+      "trips": 20826425
+    },
+    {
+      "location": "Queens",
+      "trips": 2220492
+    },
+    {
+      "location": "Brooklyn",
+      "trips": 801370
+    },
+    {
+      "location": "Bronx",
+      "trips": 174640
+    },
+    {
+      "location": "Unknown",
+      "trips": 44884
+    },
+    {
+      "location": "N/A",
+      "trips": 9780
+    },
+    {
+      "location": "EWR",
+      "trips": 2547
+    },
+    {
+      "location": "Staten Island",
+      "trips": 2316
+    }
+  ],
+  "runtimes": [
+    {
+      "run": "first_six_month_run",
+      "seconds": 175.397,
+      "run_id": "fcc8ea3395034c90a702a215c16f1144",
+      "start_time": "2026-09-13T03:59:43.955922+00:00"
+    },
+    {
+      "run": "unchanged_rerun",
+      "seconds": 0.332,
+      "run_id": "68653100105b4d32a86320411afe58d7",
+      "start_time": "2026-09-13T04:04:05.099204+00:00"
+    },
+    {
+      "run": "forced_march_backfill",
+      "seconds": 18.664,
+      "run_id": "914c7d6ec3b3492e9ccb612a8099bc1d",
+      "start_time": "2026-09-13T04:04:05.754967+00:00"
+    },
+    {
+      "run": "full_refresh",
+      "seconds": 24.553,
+      "run_id": "f2001979610b43b2a799fd891d47ac48",
+      "start_time": "2026-09-13T04:04:24.879763+00:00"
+    }
+  ],
+  "runtime_context": "Single observations on macOS ARM64; first load reused January and zones. Other runs used local raw files. Different operations, not a speedup benchmark.",
+  "image_sha256": "5179bf208f37d1079199ee34facffe0d520a2575fdbc9899c75611d0fa3c241c"
+}
